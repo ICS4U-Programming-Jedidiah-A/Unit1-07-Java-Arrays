@@ -1,4 +1,29 @@
-- name: Check out Git repository
+##################################################
+
+# Run Mr Coxall's Super Linter against code base #
+
+##################################################
+
+---
+
+name: Mr Coxall's Super Linter
+
+
+on: [push, pull_request]
+
+
+jobs:
+
+ run-linters:
+
+   name: Mr Coxall's Super Linter
+
+   runs-on: ubuntu-latest
+
+
+   steps:
+
+     - name: Check out Git repository
 
        uses: actions/checkout@main
 
@@ -26,3 +51,4 @@
          DEFAULT_BRANCH: main
 
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
